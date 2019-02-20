@@ -25,6 +25,12 @@ variable "aws_image" {
   }
 }
 
+variable "aws_subnet" {
+  description = "subnet for the AMI to run on"
+}
+
+## SSH connection settings
+
 variable "os_username" {
   description = "Default username for the AMI used"
   default     = "ubuntu"
@@ -56,6 +62,11 @@ variable "public_key" {
 
   # if empty string will read contents of file at var.public_key_file
   default     = ""
+}
+
+variable "ssh_agent" {
+  description = "Enable or disable SSH Agent. Can correct some connectivity issues. Default: false"
+  default     = false
 }
 
 ### Settings for sleep tests

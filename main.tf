@@ -9,6 +9,10 @@ resource "random_pet" "label" {
   length    = "2"
 }
 
+data "aws_subnet" "sleep-subnet" {
+  id = "${var.aws_subnet}"
+}
+
 data "aws_ami" "base_image" {
     most_recent = true
     filter {
@@ -28,6 +32,7 @@ resource "aws_instance" "sleep-test" {
   count         = "1"
   ami           = "${data.aws_ami.base_image.id}"
   instance_type = "t2.nano"
+  subnet_id     = "${data.aws_subnet.sleep-subnet.id}"
 
   key_name                    = "${local.keypair_name}"
   associate_public_ip_address = "true"
@@ -57,7 +62,7 @@ resource "null_resource" "sleep-test-1" {
   connection {
     type        = "ssh"
     user        = "${var.os_username}"
-    host        = "${aws_instance.sleep_test.0.public_dns}"
+    host        = "${aws_instance.sleep-test.0.public_dns}"
     private_key = "${local.private_key}"
     agent       = "${var.ssh_agent}"
   }
@@ -81,7 +86,7 @@ resource "null_resource" "sleep-test-2" {
   connection {
     type        = "ssh"
     user        = "${var.os_username}"
-    host        = "${aws_instance.sleep_test.0.public_dns}"
+    host        = "${aws_instance.sleep-test.0.public_dns}"
     private_key = "${local.private_key}"
     agent       = "${var.ssh_agent}"
   }
@@ -105,7 +110,7 @@ resource "null_resource" "sleep-test-3" {
   connection {
     type        = "ssh"
     user        = "${var.os_username}"
-    host        = "${aws_instance.sleep_test.0.public_dns}"
+    host        = "${aws_instance.sleep-test.0.public_dns}"
     private_key = "${local.private_key}"
     agent       = "${var.ssh_agent}"
   }
@@ -129,7 +134,7 @@ resource "null_resource" "sleep-test-4" {
   connection {
     type        = "ssh"
     user        = "${var.os_username}"
-    host        = "${aws_instance.sleep_test.0.public_dns}"
+    host        = "${aws_instance.sleep-test.0.public_dns}"
     private_key = "${local.private_key}"
     agent       = "${var.ssh_agent}"
   }
@@ -153,7 +158,7 @@ resource "null_resource" "sleep-test-5" {
   connection {
     type        = "ssh"
     user        = "${var.os_username}"
-    host        = "${aws_instance.sleep_test.0.public_dns}"
+    host        = "${aws_instance.sleep-test.0.public_dns}"
     private_key = "${local.private_key}"
     agent       = "${var.ssh_agent}"
   }
