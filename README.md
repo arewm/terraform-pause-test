@@ -5,4 +5,10 @@ would stop returning any stdout responses from the remote server. I identified a
 was not returning anything to `stdout`, therefore causing the remote process to stop responding. This is a simple Terraform
 project that I created to test that theory.
 
+# Required parameters
 
+* `aws_access_key`
+* `aws_secret_key`
+* `user_name`
+
+If no private/public key data is provided to terraform (i.e. by default), the key will be pulled from `~/.ssh/id_rsa*`
