@@ -4,6 +4,6 @@
 
  count=0
  until [ "$count" == "${sleep_count}" ]; do
-     sleep ${sleep_time}
-     echo "Woke up after a ${sleep_time}s nap for the $(( count++ )) time."
+    sleep ${sleep_time}
+    echo "Woke up after $(( count++ +1 )) ${sleep_time}s nap(s)."
  done
