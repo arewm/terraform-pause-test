@@ -120,9 +120,9 @@ locals {
   keypair_name      = "${replace(local.keypair_name_temp, "/[^-_ \\w]/", "")}"
   create_keypair    = "${var.keypair_name == "" ? 1 : "0"}"
 
-  run_1 = "${var.sleep_test_1[run] == "true" ? 1 : 0}"
-  run_2 = "${var.sleep_test_2[run] == "true" ? 1 : 0}"
-  run_3 = "${var.sleep_test_3[run] == "true" ? 1 : 0}"
-  run_4 = "${var.sleep_test_4[run] == "true" ? 1 : 0}"
-  run_5 = "${var.sleep_test_5[run] == "true" ? 1 : 0}"
+  run_1 = "${var.sleep_test_1["run"] == "true" ? 1 : 0}"
+  run_2 = "${var.sleep_test_2["run"] == "true" ? 1 : 0}"
+  run_3 = "${var.sleep_test_3["run"] == "true" ? 1 : 0}"
+  run_4 = "${var.sleep_test_4["run"] == "true" ? 1 : 0}"
+  run_5 = "${var.sleep_test_5["run"] == "true" ? 1 : 0}"
 }

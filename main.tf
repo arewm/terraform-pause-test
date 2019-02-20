@@ -46,8 +46,8 @@ resource "aws_instance" "sleep-test" {
 data "template_file" "sleep-test-1" {
   template = "${file("${path.module}/sleep.tpl")}"
   vars {
-    sleep_time  = "${var.sleep_test_1[sleep]}"
-    sleep_count = "${var.sleep_test_1[count]}"
+    sleep_time  = "${var.sleep_test_1["sleep"]}"
+    sleep_count = "${var.sleep_test_1["count"]}"
   }
 }
 
@@ -70,8 +70,8 @@ resource "null_resource" "sleep-test-1" {
 data "template_file" "sleep-test-2" {
   template = "${file("${path.module}/sleep.tpl")}"
   vars {
-    sleep_time  = "${var.sleep_test_2[sleep]}"
-    sleep_count = "${var.sleep_test_2[count]}"
+    sleep_time  = "${var.sleep_test_2["sleep"]}"
+    sleep_count = "${var.sleep_test_2["count"]}"
   }
 }
 
@@ -94,8 +94,8 @@ resource "null_resource" "sleep-test-2" {
 data "template_file" "sleep-test-3" {
   template = "${file("${path.module}/sleep.tpl")}"
   vars {
-    sleep_time  = "${var.sleep_test_3[sleep]}"
-    sleep_count = "${var.sleep_test_3[count]}"
+    sleep_time  = "${var.sleep_test_3["sleep"]}"
+    sleep_count = "${var.sleep_test_3["count"]}"
   }
 }
 
@@ -118,8 +118,8 @@ resource "null_resource" "sleep-test-3" {
 data "template_file" "sleep-test-4" {
   template = "${file("${path.module}/sleep.tpl")}"
   vars {
-    sleep_time  = "${var.sleep_test_4[sleep]}"
-    sleep_count = "${var.sleep_test_4[count]}"
+    sleep_time  = "${var.sleep_test_4["sleep"]}"
+    sleep_count = "${var.sleep_test_4["count"]}"
   }
 }
 
@@ -142,8 +142,8 @@ resource "null_resource" "sleep-test-4" {
 data "template_file" "sleep-test-5" {
   template = "${file("${path.module}/sleep.tpl")}"
   vars {
-    sleep_time  = "${var.sleep_test_5[sleep]}"
-    sleep_count = "${var.sleep_test_5[count]}"
+    sleep_time  = "${var.sleep_test_5["sleep"]}"
+    sleep_count = "${var.sleep_test_5["count"]}"
   }
 }
 
