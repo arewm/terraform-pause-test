@@ -18,7 +18,7 @@ install:
   - /tmp/terraform version
 
 script:
-  - ssh-keygen -b 2048 -t rsa -f ~/id_rsa -q -N ""
+  - ssh-keygen -b 2048 -t rsa -f /tmp/id_rsa -q -N "" && export TF_VAR_private_key_file=/tmp/id_rsa && export TF_VAR_public_key_file=/tmp/id_rsa.pub
   - /tmp/terraform init
   - /tmp/terraform plan
   - /tmp/terraform apply -auto-approve
