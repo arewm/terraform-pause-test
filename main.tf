@@ -31,8 +31,8 @@ resource "aws_key_pair" "my_key" {
 resource "aws_instance" "sleep-test" {
   count         = "1"
   ami           = "${data.aws_ami.base_image.id}"
-  instance_type = "t2.nano"
-  subnet_id     = "${data.aws_subnet.sleep-subnet.id}"
+  instance_type = "t1.nano"
+  #subnet_id     = "${data.aws_subnet.sleep-subnet.id}"
 
   key_name                    = "${local.keypair_name}"
   associate_public_ip_address = "true"

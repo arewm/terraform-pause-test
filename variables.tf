@@ -26,7 +26,8 @@ variable "aws_image" {
 }
 
 variable "aws_subnet" {
-  description = "subnet for the AMI to run on"
+  description = "subnet for the AMI to run on; not currently used"
+  default = ""
 }
 
 ## SSH connection settings
