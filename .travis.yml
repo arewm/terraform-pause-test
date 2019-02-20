@@ -18,6 +18,7 @@ install:
   - /tmp/terraform version
 
 script:
+  - /tmp/terraform init
   - /tmp/terraform plan
   - /tmp/terraform apply -auto-approve
   - /tmp/terraform destroy -auto-approve
