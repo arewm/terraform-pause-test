@@ -1,25 +1,12 @@
 provider "aws" {
     access_key = "${var.aws_access_key}"
     secret_key = "${var.aws_secret_key}"
-    region     = "${var.aws_region}"
+    region     = "eu-west-1"
 }
 
 resource "random_pet" "label" {
   separator = "-"
   length    = "2"
-}
-
-data "aws_subnet" "sleep-subnet" {
-  id = "${var.aws_subnet}"
-}
-
-data "aws_ami" "base_image" {
-    most_recent = true
-    filter {
-        name   = "image-id"
-        values = ["${var.aws_image["ami"]}"]
-    }
-    owners = ["${var.aws_image["owner"]}"] 
 }
 
 resource "aws_key_pair" "my_key" {
@@ -30,9 +17,8 @@ resource "aws_key_pair" "my_key" {
 
 resource "aws_instance" "sleep-test" {
   count         = "1"
-  ami           = "${data.aws_ami.base_image.id}"
-  instance_type = "t1.nano"
-  #subnet_id     = "${data.aws_subnet.sleep-subnet.id}"
+  ami           = "ami-0d137679f8243e9f8" # Ubuntu 18.04
+  instance_type = "t1.micro"
 
   key_name                    = "${local.keypair_name}"
   associate_public_ip_address = "true"

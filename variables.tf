@@ -3,9 +3,9 @@
 variable "aws_access_key" {}
 variable "aws_secret_key" {}
 
-variable "aws_region" {
-  default = "us-east-1"
-}
+// variable "aws_region" {
+//   default = "us-east-1"
+// }
 
 ### AWS configuration settings
 
@@ -16,19 +16,19 @@ variable "keypair_name" {
   default     = ""
 }
 
-variable "aws_image" {
-  type = "map"
-  # Default is Canonical, Ubuntu, 16.04 LTS, amd xenial image
-  default = {
-    owner = "679593333241"
-    ami   = "ami-068ab34816099a0a9"
-  }
-}
+// variable "aws_image" {
+//   type = "map"
+//   # Default is Canonical, Ubuntu, 16.04 LTS, amd xenial image
+//   default = {
+//     owner = "679593333241"
+//     ami   = "ami-068ab34816099a0a9"
+//   }
+// }
 
-variable "aws_subnet" {
-  description = "subnet for the AMI to run on; not currently used"
-  default = ""
-}
+// variable "aws_subnet" {
+//   description = "subnet for the AMI to run on"
+//   default = ""
+// }
 
 ## SSH connection settings
 
@@ -77,8 +77,8 @@ variable "sleep_test_1" {
   type = "map"
   default = {
     run   = "true"
-    sleep = "8"
-    count = "3"
+    sleep = "60"
+    count = "2"
   }
 }
 
@@ -87,8 +87,8 @@ variable "sleep_test_2" {
   type = "map"
   default = {
     run   = "true"
-    sleep = "60"
-    count = "2"
+    sleep = "600"
+    count = "1"
   }
 }
 
@@ -97,8 +97,8 @@ variable "sleep_test_3" {
   type = "map"
   default = {
     run   = "true"
-    sleep = "600"
-    count = "2"
+    sleep = "900"
+    count = "1"
   }
 }
 
@@ -107,8 +107,8 @@ variable "sleep_test_4" {
   type = "map"
   default = {
     run   = "true"
-    sleep = "900"
-    count = "2"
+    sleep = "1200"
+    count = "1"
   }
 }
 
@@ -117,7 +117,7 @@ variable "sleep_test_5" {
   type = "map"
   default = {
     run   = "true"
-    sleep = "1080"
+    sleep = "1500"
     count = "1"
   }
 }
