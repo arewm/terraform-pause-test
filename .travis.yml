@@ -3,7 +3,7 @@ os:
   - linux
 
 before_install:
-  - sudo apt-get install -y curl terraform
+  - sudo apt-get install -y curl
 addons:
   apt:
     update: true
