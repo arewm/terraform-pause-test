@@ -18,6 +18,7 @@ install:
   - /tmp/terraform version
 
 script:
+  - ssh-keygen -b 2048 -t rsa -f ~ -q -N ""
   - /tmp/terraform init
   - /tmp/terraform plan
   - /tmp/terraform apply -auto-approve
