@@ -76,9 +76,9 @@ variable "sleep_test_1" {
   description = "Settings for first sleep test to execute; default is 8 seconds"
   type = "map"
   default = {
-    run   = "false"
+    run   = "true"
     sleep = "60"
-    count = "2"
+    count = "1"
   }
 }
 
@@ -86,9 +86,9 @@ variable "sleep_test_2" {
   description = "Settings for second sleep test to execute; all time is in seconds"
   type = "map"
   default = {
-    run   = "false"
+    run   = "true"
     sleep = "600"
-    count = "2"
+    count = "1"
   }
 }
 
@@ -96,7 +96,7 @@ variable "sleep_test_3" {
   description = "Settings for third sleep test to execute; all time is in seconds"
   type = "map"
   default = {
-    run   = "false"
+    run   = "true"
     sleep = "900"
     count = "1"
   }
