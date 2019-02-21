@@ -86,7 +86,7 @@ variable "sleep_test_2" {
   description = "Settings for second sleep test to execute; all time is in seconds"
   type = "map"
   default = {
-    run   = "false"
+    run   = "true"
     sleep = "600"
     count = "2"
   }
