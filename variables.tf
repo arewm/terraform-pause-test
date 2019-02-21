@@ -106,9 +106,9 @@ variable "sleep_test_4" {
   description = "Settings for fourth sleep test to execute; all time is in seconds"
   type = "map"
   default = {
-    run   = "true"
+    run   = "false"
     sleep = "1200"
-    count = "2"
+    count = "1"
   }
 }
 
@@ -117,8 +117,8 @@ variable "sleep_test_5" {
   type = "map"
   default = {
     run   = "true"
-    sleep = "1500"
-    count = "3"
+    sleep = "1800"
+    count = "1"
   }
 }
 
